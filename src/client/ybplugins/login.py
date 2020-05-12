@@ -72,10 +72,9 @@ class Login:
             }
         reply = ''
         if match_num == 1:
-            reply = f'{self._get_login_code_url(ctx)}' \
-                '\n如显示已被使用，可发送 重置密码，之后用密码登录\n※ 请及时设置一个登录密码以避免无法获取登录链接时无法登录'
+            reply = f'{self._get_login_code_url(ctx)}'
         elif match_num == 3:
-            reply = f'您的密码已重置为临时密码：{self._reset_pwd(ctx)}，登录后请立刻修改'
+            reply = f'临时mima：{self._reset_pwd(ctx)}'
         else:
             assert False, f"没有实现匹配码{match_num}对应的操作"
 
